@@ -1,2 +1,3 @@
-# cmake_tools
-Repository for CMake helpers. 
+# CMake Tools
+
+Repository for CMake helpers.
