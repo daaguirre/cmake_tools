@@ -12,7 +12,7 @@ function(activate_virtual_env)
     set(multiValueArgs "")
     cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-    set(project_venv "${VENV_DIR}/${ARGS_VENV_NAME}" CACHE INTERNAL)
+    set(project_venv "${VENV_DIR}/${ARGS_VENV_NAME}" CACHE INTERNAL "")
     if(NOT EXISTS "${project_venv}")
         find_package (Python3 3.8 COMPONENTS Interpreter)
         message("Creating python venv in ${project_venv}")
