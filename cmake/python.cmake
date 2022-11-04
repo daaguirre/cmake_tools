@@ -3,7 +3,7 @@
 # if virtual env does not exist is created
 # later venv bin path is added to the PATH 
 # and project requirements are installed if the venv is a brand new venv
-
+# \arg VENV_NAME: name of virtual environment 
 # Output variables:
 # project_venv
 function(activate_virtual_env)
@@ -12,7 +12,7 @@ function(activate_virtual_env)
     set(multiValueArgs "")
     cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-    set(project_venv "${VENV_DIR}/${VENV_NAME}")
+    set(project_venv "${VENV_DIR}/${ARGS_VENV_NAME}")
     if(NOT EXISTS "${project_venv}")
         find_package (Python3 3.8 COMPONENTS Interpreter)
         message("Creating python venv in ${project_venv}")
