@@ -17,6 +17,8 @@ function(generate_cpp_sources)
         set(FILE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${FILE})
         if(NOT EXISTS ${FILE_PATH})
             get_filename_component(EXTENSION ${FILE_PATH} EXT)
+            # used in template
+            get_filename_component(FILE_NAME ${FILE_PATH} NAME_WE)
             if(${EXTENSION} IN_LIST HEADER_FILES)
                 string(REPLACE "." "_" CPP_GUARD ${FILE})
                 string(REPLACE "/" "_" CPP_GUARD ${CPP_GUARD})
