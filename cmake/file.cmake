@@ -23,7 +23,7 @@ function(generate_cpp_sources)
                 string(TOUPPER ${CPP_GUARD} CPP_GUARD)
                 set(CPP_GUARD "__${CPP_GUARD}_")
                 configure_file(${CMAKE_TOOLS_PATH}/templates/cpp_header.in ${FILE_PATH})
-            else
+            else()
                 configure_file(${CMAKE_TOOLS_PATH}/templates/any.in ${FILE_PATH})
             endif()
         endif()
