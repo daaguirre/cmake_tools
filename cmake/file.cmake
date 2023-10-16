@@ -12,7 +12,7 @@ function(generate_cpp_sources)
     set(multiValueArgs FILES)
     cmake_parse_arguments(ARGS "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
-    set(HEADER_FILES ".h" ".cuh")
+    set(HEADER_FILES ".h" ".hpp" ".cuh")
     foreach(FILE ${ARGS_FILES})
         set(FILE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${FILE})
         if(NOT EXISTS ${FILE_PATH})
